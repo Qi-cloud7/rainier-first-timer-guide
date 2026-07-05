@@ -30,24 +30,25 @@ const routes = {
   light: {
     title: "Paradise light：更轻松、少 trail 的版本",
     badge: "低体力版本",
-    mapImage: "./assets/google-map-paradise-light.png",
+    mapImage: "./assets/google-map-paradise-classic.png",
     mapLink:
-      "https://www.google.com/maps/dir/47.67399,-122.12151/46.78610,-121.73510/46.77510,-121.74680/46.77170,-121.77970/47.67399,-122.12151",
+      "https://www.google.com/maps/dir/47.67399,-122.12151/46.78610,-121.73510/46.76920,-121.72820/46.77510,-121.74680/46.77170,-121.77970/47.67399,-122.12151",
     summary:
-      "如果前一天累、天气一般、或不想走太多，就只做 Paradise 停车场周边 + Myrtle Falls + Narada/Christine。少走路但仍有经典画面。",
-    drive: "约 4.5-5.5 小时总驾驶，具体看 Tacoma/Puyallup 与园区道路",
-    walking: "约 1.5-3 miles",
+      "如果前一天累、天气一般、或不想走太多，就做 Paradise 停车场周边短走，再加 Reflection Lakes 这个车边倒影点，最后用 Narada/Christine 轻量收尾。",
+    drive: "约 5-6 小时总驾驶，Reflection Lakes 只增加短绕行但更依赖 Stevens Canyon 路况",
+    walking: "约 1.5-3 miles，Reflection Lakes 可车边拍",
     schedule: [
       ["5:50", "Redmond 出发", "仍建议早走，因为 Paradise 停车不等人。"],
       ["8:30", "Paradise 停车", "先拍游客中心附近山景，熟悉地形。"],
       ["9:00-10:00", "Nisqually Vista 或 Myrtle Falls 二选一先走", "如果云开，先去视野更好的 Nisqually Vista；如果想拍水，先 Myrtle。"],
       ["10:30-12:00", "另一条短 trail", "只走舒服的距离，不追 Skyline。"],
-      ["13:00-14:30", "Narada Falls", "广角 + ND 长曝光主场。"],
-      ["14:45-15:20", "Christine Falls / Ricksecker Point", "低体力路边收尾，适合最后一组照片。"],
-      ["15:30-19:30", "返程", "早回家，保留好心情。"]
+      ["12:30-13:30", "Reflection Lakes", "如果山露出来且湖面不太乱，拍倒影；如果有风，就用 100-300mm 抽取树线、雪山和湖边层次。"],
+      ["14:00-15:00", "Narada Falls", "广角 + ND 长曝光主场；阴天也稳。"],
+      ["15:15-15:45", "Christine Falls / Ricksecker Point", "低体力路边收尾，适合最后一组照片。"],
+      ["15:45-19:45", "返程", "早回家，保留好心情。"]
     ],
     rules: [
-      "Light 版本不去 Reflection Lakes，除非湖面和天气特别好。",
+      "Reflection Lakes 是 light 版唯一新增湖边点：到场先看山和风，如果没有倒影就快速拍树线/湖面后撤。",
       "如果山被云完全盖住，瀑布和森林会比硬等山更有收获。",
       "这条路线最适合第一次摸清 Paradise，不适合追求最多打卡点。"
     ]
