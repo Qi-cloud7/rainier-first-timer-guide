@@ -1,0 +1,580 @@
+:root {
+  --ink: #14201c;
+  --muted: #5c6b62;
+  --paper: #f2f0e8;
+  --white: #fffefa;
+  --line: rgba(20, 32, 28, 0.14);
+  --evergreen: #123c33;
+  --moss: #53766b;
+  --lake: #1f6c7b;
+  --gold: #c79538;
+  --snow: #e9f3f2;
+  --rust: #a75b41;
+  --shadow: 0 18px 50px rgba(16, 35, 31, 0.13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+  line-height: 1.62;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.hero {
+  min-height: 92vh;
+  padding: 24px clamp(18px, 4vw, 58px) 58px;
+  color: var(--white);
+  background:
+    linear-gradient(115deg, rgba(7, 29, 26, 0.98) 0%, rgba(22, 62, 55, 0.92) 48%, rgba(68, 84, 80, 0.72) 100%),
+    url("./assets/myrtle-falls-rainier-real.jpg") center / cover;
+}
+
+.topbar,
+.hero-grid,
+.brief,
+.section-heading,
+.toolbar,
+.parking-grid,
+.route-layout,
+.region-panel,
+.trail-grid,
+.photo-layout,
+.checklist-layout,
+.source-list {
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 42px;
+}
+
+.topbar a,
+.button,
+.route-filter,
+.region-filter,
+.trail-filter,
+.source-list a,
+.status-card a {
+  min-height: 40px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 6px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 850;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.button.primary,
+.route-filter.active,
+.region-filter.active,
+.trail-filter.active {
+  color: #14201c;
+  background: var(--gold);
+  border-color: transparent;
+}
+
+.button.small {
+  display: inline-flex;
+  color: var(--evergreen);
+  background: var(--white);
+  border-color: var(--line);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+}
+
+.date-line {
+  margin: 0 0 12px;
+  color: #f1c477;
+  font-size: 0.84rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+  letter-spacing: 0;
+}
+
+h1 {
+  margin: 0;
+  max-width: 10.5ch;
+  font-size: clamp(3rem, 6.4vw, 6.2rem);
+  line-height: 0.96;
+}
+
+.hero-copy p {
+  max-width: 720px;
+  color: rgba(255, 254, 250, 0.88);
+  font-size: 1.12rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero-media {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.hero-media img {
+  width: 100%;
+  height: min(60vh, 560px);
+  object-fit: cover;
+}
+
+.hero-media figcaption {
+  padding: 12px 14px;
+  color: rgba(255, 254, 250, 0.84);
+  font-size: 0.9rem;
+}
+
+main section {
+  padding: 70px clamp(18px, 4vw, 58px);
+}
+
+.band {
+  background: var(--white);
+}
+
+.brief {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.brief article,
+.parking-card,
+.route-card,
+.route-notes,
+.region-card,
+.trail-card,
+.photo-panel,
+.checklist label,
+.status-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 254, 250, 0.94);
+  box-shadow: 0 12px 34px rgba(20, 42, 38, 0.07);
+}
+
+.brief article {
+  padding: 20px;
+}
+
+.brief strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+p {
+  color: var(--muted);
+}
+
+.section-heading {
+  margin-bottom: 26px;
+}
+
+.split-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.section-heading span,
+.parking-card span,
+.route-copy span,
+.region-card span,
+.trail-meta span,
+.photo-panel span {
+  color: var(--lake);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 6px 0 0;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.08;
+}
+
+.section-heading p {
+  max-width: 880px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.toolbar.compact {
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+.route-filter,
+.region-filter,
+.trail-filter {
+  color: var(--ink);
+  background: var(--white);
+  border-color: var(--line);
+}
+
+.parking-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.parking-card {
+  overflow: hidden;
+}
+
+.parking-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--snow);
+}
+
+.parking-card div {
+  padding: 18px;
+}
+
+.parking-card h3,
+.route-copy h3,
+.region-card h3,
+.trail-card h3,
+.photo-panel h3 {
+  margin: 8px 0;
+  font-size: 1.35rem;
+  line-height: 1.18;
+}
+
+.route-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.route-card {
+  overflow: hidden;
+}
+
+.route-map {
+  width: 100%;
+  aspect-ratio: 16 / 8.4;
+  object-fit: cover;
+  background: var(--snow);
+}
+
+.route-copy {
+  padding: 22px;
+}
+
+.route-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.route-stats strong {
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: var(--evergreen);
+  background: rgba(31, 108, 123, 0.1);
+}
+
+.route-notes {
+  padding: 22px;
+}
+
+.route-notes h3 {
+  margin: 0 0 14px;
+}
+
+.route-notes ul {
+  margin: 0;
+  padding-left: 19px;
+  color: var(--muted);
+}
+
+.timeline {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.timeline article {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 4px 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--white);
+}
+
+.timeline time {
+  color: var(--rust);
+  font-weight: 950;
+}
+
+.timeline p {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.region-card {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+  overflow: hidden;
+}
+
+.region-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+}
+
+.region-card div {
+  padding: clamp(22px, 4vw, 42px);
+}
+
+.trail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.trail-card {
+  overflow: hidden;
+}
+
+.trail-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--snow);
+}
+
+.trail-body {
+  padding: 18px;
+}
+
+.trail-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.trail-body p {
+  margin: 10px 0;
+}
+
+.photo-layout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.photo-panel {
+  padding: 22px;
+  background: linear-gradient(180deg, #fffefa, #edf4f1);
+}
+
+.checklist-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 18px;
+  align-items: start;
+}
+
+.checklist {
+  display: grid;
+  gap: 10px;
+}
+
+.checklist label {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 14px 16px;
+  color: var(--muted);
+}
+
+.checklist input {
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  accent-color: var(--evergreen);
+}
+
+.status-card {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+}
+
+.status-card h3 {
+  margin: 0;
+}
+
+.status-card a,
+.source-list a {
+  color: var(--evergreen);
+  background: var(--white);
+  border-color: var(--line);
+}
+
+.source-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.sources {
+  padding-bottom: 90px;
+}
+
+@media (max-width: 1080px) {
+  .hero-grid,
+  .route-layout,
+  .region-card,
+  .checklist-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .brief,
+  .parking-grid,
+  .trail-grid,
+  .photo-layout,
+  .source-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .region-card img {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 42px;
+  }
+
+  .topbar {
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+
+  .split-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .toolbar.compact {
+    justify-content: flex-start;
+  }
+
+  .brief,
+  .parking-grid,
+  .trail-grid,
+  .photo-layout,
+  .source-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media img {
+    height: 320px;
+  }
+
+  .route-map {
+    aspect-ratio: 1.22 / 1;
+    object-position: 58% center;
+  }
+
+  main section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+}
+
+@media (max-width: 460px) {
+  .topbar a {
+    width: calc(50% - 4px);
+    text-align: center;
+  }
+
+  .button,
+  .route-filter,
+  .region-filter,
+  .trail-filter,
+  .source-list a,
+  .status-card a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(2.75rem, 18vw, 4.4rem);
+  }
+
+  .timeline article {
+    grid-template-columns: 1fr;
+  }
+
+  .trail-meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

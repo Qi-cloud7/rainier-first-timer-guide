@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainier 第一次游客 Paradise 导览</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css?v=paradise-first-cn-1" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="页面导航">
+        <a href="#parking">停车</a>
+        <a href="#routes">路线</a>
+        <a href="#regions">区域</a>
+        <a href="#trails">Trails</a>
+        <a href="#photo">摄影</a>
+        <a href="#sources">来源</a>
+      </nav>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="date-line">2026 年 7 月 6 日 周一 | Redmond 出发 | 目标 8:30 AM 到 Paradise 停车场</p>
+          <h1>第一次去 Rainier，先看懂 Paradise</h1>
+          <p>
+            Mount Rainier 不是一个停车场加几条 trail，而是几个相距很远的区域。这个页面先帮你把入口、
+            停车、区域关系和每条 trail 的风景特色讲清楚，再给一个以 Paradise 为主的一天摄影路线。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#routes">看明天路线</a>
+            <a class="button" href="#trails">按风景选 trail</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <img src="./assets/myrtle-falls-rainier-real.jpg" alt="Paradise 区域 Myrtle Falls 和 Mount Rainier" />
+          <figcaption>Paradise 最适合第一次去：山近、草甸、瀑布、短 trail 多，但停车必须早点解决。</figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <main>
+      <section class="brief band" aria-label="核心结论">
+        <article>
+          <strong>主线</strong>
+          <p>Redmond -> Nisqually Entrance -> Longmire -> Paradise -> Reflection Lakes -> Narada/Christine -> Redmond。</p>
+        </article>
+        <article>
+          <strong>年票</strong>
+          <p>America the Beautiful pass 覆盖一辆私家车及车内乘客；带 pass、ID 和备用信用卡。</p>
+        </article>
+        <article>
+          <strong>停车</strong>
+          <p>目标 8:30 到 Paradise/Jackson Visitor Center。晚到不赌路边停车，直接切 backup。</p>
+        </article>
+        <article>
+          <strong>摄影</strong>
+          <p>16-35mm 拍瀑布/倒影/草甸前景；100-300mm 拍雪山压缩、冰川纹理和人物比例。</p>
+        </article>
+      </section>
+
+      <section id="parking" class="section">
+        <div class="section-heading">
+          <span>先理解停车</span>
+          <h2>第一次去 Rainier，停车决定体验</h2>
+          <p>
+            从 Redmond 到 Paradise 停车场通常是一个长早起日。NPS 明确提醒夏季周末 Paradise 和 Sunrise late morning 可能满；
+            周一压力会小一些，但 8:30 到场依然是正确策略。
+          </p>
+        </div>
+        <div id="parkingGrid" class="parking-grid"></div>
+      </section>
+
+      <section id="routes" class="section band">
+        <div class="section-heading split-heading">
+          <div>
+            <span>一天路线选择器</span>
+            <h2>Paradise 为主，不贪心跨区</h2>
+            <p>一天里深玩 Paradise 和 Sunrise 不现实。第一次去，先把 Paradise 看懂、拍好，再把 Sunrise 留给下次。</p>
+          </div>
+          <div class="toolbar compact" role="group" aria-label="路线选择">
+            <button class="route-filter active" type="button" data-route="classic">Paradise classic</button>
+            <button class="route-filter" type="button" data-route="light">Paradise light</button>
+            <button class="route-filter" type="button" data-route="backup">停车/天气 backup</button>
+          </div>
+        </div>
+        <div class="route-layout">
+          <div id="routePanel" class="route-panel" aria-live="polite"></div>
+          <aside id="routeNotes" class="route-notes" aria-live="polite"></aside>
+        </div>
+      </section>
+
+      <section id="regions" class="section">
+        <div class="section-heading split-heading">
+          <div>
+            <span>公园区域地图感</span>
+            <h2>Rainier 的几个区域，不在同一个停车场</h2>
+            <p>先理解区域，再选 trail。下面每个区域都可以点开看：适合第一次去吗、停车在哪、拍什么。</p>
+          </div>
+          <div id="regionTabs" class="toolbar compact" role="group" aria-label="区域选择"></div>
+        </div>
+        <div id="regionPanel" class="region-panel" aria-live="polite"></div>
+      </section>
+
+      <section id="trails" class="section band">
+        <div class="section-heading split-heading">
+          <div>
+            <span>Trail 风景词典</span>
+            <h2>不用走完，也要知道每条 trail 看什么</h2>
+            <p>按照你的玩法，每条 trail 的重点是“走一小段值不值、能拍到什么”，不是全程打卡。</p>
+          </div>
+          <div class="toolbar compact" role="group" aria-label="Trail 过滤">
+            <button class="trail-filter active" type="button" data-filter="all">全部</button>
+            <button class="trail-filter" type="button" data-filter="easy">轻松短走</button>
+            <button class="trail-filter" type="button" data-filter="photo">摄影优先</button>
+            <button class="trail-filter" type="button" data-filter="water">瀑布/水景</button>
+            <button class="trail-filter" type="button" data-filter="sample">只走一段</button>
+            <button class="trail-filter" type="button" data-filter="skip">跳过</button>
+          </div>
+        </div>
+        <div id="trailGrid" class="trail-grid"></div>
+      </section>
+
+      <section id="photo" class="section">
+        <div class="section-heading">
+          <span>摄影路线思路</span>
+          <h2>两支镜头，不同任务</h2>
+        </div>
+        <div class="photo-layout">
+          <article class="photo-panel">
+            <span>16-35mm</span>
+            <h3>前景、瀑布、倒影</h3>
+            <p>Myrtle Falls、Narada Falls、Reflection Lakes、草甸花和步道曲线都适合广角。不要让 Rainier 变成画面里很小的白点，前景要够强。</p>
+          </article>
+          <article class="photo-panel">
+            <span>100-300mm</span>
+            <h3>压缩、冰川、人物比例</h3>
+            <p>Paradise 的优势是山很近。用长焦拍雪线、冰川纹理、草甸里的人、远处山脊层次，会比普通广角游客照更有重量。</p>
+          </article>
+          <article class="photo-panel">
+            <span>ND / tripod</span>
+            <h3>只在水景点展开</h3>
+            <p>长曝光优先给 Narada、Christine、Myrtle 和 Reflection Lakes。Parking 紧张或人很多时，不强行每个点架脚架。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section band">
+        <div class="section-heading">
+          <span>出发前 10 分钟</span>
+          <h2>明早检查清单</h2>
+        </div>
+        <div class="checklist-layout">
+          <div id="checklist" class="checklist"></div>
+          <aside class="status-card">
+            <h3>Live checks</h3>
+            <a href="https://www.nps.gov/mora/planyourvisit/road-status.htm" target="_blank" rel="noreferrer">NPS road status</a>
+            <a href="https://www.nps.gov/mora/planyourvisit/trails-and-backcountry-camp-conditions.htm" target="_blank" rel="noreferrer">NPS trail conditions</a>
+            <a href="https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm" target="_blank" rel="noreferrer">NPS webcams</a>
+            <a href="https://wsdot.com/travel/real-time/map/" target="_blank" rel="noreferrer">WSDOT traffic map</a>
+          </aside>
+        </div>
+      </section>
+
+      <section id="sources" class="section sources">
+        <div class="section-heading">
+          <span>Sources</span>
+          <h2>页面事实来源</h2>
+        </div>
+        <div class="source-list">
+          <a href="https://www.nps.gov/mora/planyourvisit/road-status.htm" target="_blank" rel="noreferrer">NPS Road Status</a>
+          <a href="https://www.nps.gov/mora/planyourvisit/fees.htm" target="_blank" rel="noreferrer">NPS Fees & Passes</a>
+          <a href="https://www.nps.gov/mora/planyourvisit/paradise.htm" target="_blank" rel="noreferrer">NPS Paradise</a>
+          <a href="https://www.nps.gov/mora/planyourvisit/congestion.htm" target="_blank" rel="noreferrer">NPS Avoid Summer Congestion</a>
+          <a href="https://www.nps.gov/mora/planyourvisit/trails-and-backcountry-camp-conditions.htm" target="_blank" rel="noreferrer">NPS Trail Conditions</a>
+          <a href="https://www.nps.gov/mora/planyourvisit/sunrise.htm" target="_blank" rel="noreferrer">NPS Sunrise</a>
+          <a href="../rainier-sunrise-photo-atlas/index.html">已建 Sunrise telephoto atlas</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js?v=paradise-first-cn-1"></script>
+  </body>
+</html>
